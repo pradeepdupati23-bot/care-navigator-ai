@@ -1,9 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAssist AI - KITS Hackathon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <h1>My Website Working ✅</h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">🩺 HealthAssist AI</div>
+        <div class="nav-tabs">
+            <button class="tab active" data-tab="home"><i class="fas fa-home"></i> Home</button>
+            <button class="tab" data-tab="symptoms"><i class="fas fa-stethoscope"></i> Symptoms</button>
+            <button class="tab" data-tab="blood"><i class="fas fa-tint"></i> Blood Bank</button>
+            <button class="tab" data-tab="reminders"><i class="fas fa-clock"></i> Reminders</button>
+            <button class="tab" data-tab="emergency"><i class="fas fa-exclamation-triangle"></i> Emergency</button>
+        </div>
+    </nav>
+
+    <!-- Home Tab - Feature #1 Personal AI Assistant -->
+    <div id="home" class="tab-content active">
+        <div class="ai-chat">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">Hi! I'm your personal health assistant 💙<br>Ask about reminders, symptoms or emergencies</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your health query...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Symptoms Tab - Features #3,4,5 -->
+    <div id="symptoms" class="tab-content">
+        <h2><i class="fas fa-diagnoses"></i> Smart Symptom Checker</h2>
+        <div class="input-group">
+            <input type="text" id="symptomText" placeholder="Type symptoms...">
+            <select id="symptomSelect">
+                <option value="">Select Symptom</option>
+                <option value="fever">Fever 🌡️</option>
+                <option value="chest pain">Chest Pain 🚨</option>
+                <option value="cough">Cough 😷</option>
+                <option value="headache">Headache 🤕</option>
+            </select>
+            <input type="file" id="symptomImage" accept="image/*">
+            <button onclick="classifySymptoms()">Classify <i class="fas fa-search"></i></button>
+        </div>
+        <div id="diagnosisResult" class="result"></div>
+    </div>
+
+    <!-- Blood Bank Tab - Feature #6 -->
+    <div id="blood" class="tab-content">
+        <h2><i class="fas fa-tint"></i> Blood Bank</h2>
+        <div class="input-group">
+            <input type="text" id="bloodGroup" placeholder="Blood Group (A+, B-, O+)">
+            <input type="text" id="bloodLocation" placeholder="Your Location">
+            <button onclick="findDonors()">Find Donors <i class="fas fa-map-marker-alt"></i></button>
+        </div>
+        <div id="donorResult" class="result"></div>
+    </div>
+
+    <!-- Reminders Tab - Feature #1 -->
+    <div id="reminders" class="tab-content">
+        <h2><i class="fas fa-clock"></i> Health Reminders</h2>
+        <button onclick="addReminder()" class="btn-primary">+ Add Reminder</button>
+        <div id="reminderList" class="reminder-list"></div>
+    </div>
+
+    <!-- Emergency Tab - Feature #2 -->
+    <div id="emergency" class="tab-content">
+        <div class="emergency-card">
+            <h2><i class="fas fa-exclamation-triangle"></i> Emergency Care</h2>
+            <p>Integrated with local healthcare systems</p>
+            <button onclick="triggerEmergency()" class="btn-emergency">🚨 EMERGENCY BUTTON</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
