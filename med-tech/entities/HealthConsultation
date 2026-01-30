@@ -1,0 +1,95 @@
+{
+  "name": "HealthConsultation",
+  "type": "object",
+  "properties": {
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Reported symptoms"
+    },
+    "symptom_description": {
+      "type": "string",
+      "description": "Detailed symptom description"
+    },
+    "duration": {
+      "type": "string",
+      "description": "How long symptoms have been present"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "mild",
+        "moderate",
+        "severe"
+      ],
+      "description": "Symptom severity level"
+    },
+    "care_level": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "description": "Classified care level"
+    },
+    "recommended_specialty": {
+      "type": "string",
+      "description": "Recommended medical specialty"
+    },
+    "ai_assessment": {
+      "type": "string",
+      "description": "AI-generated health assessment"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recommended next steps"
+    },
+    "medicine_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "how_it_helps": {
+            "type": "string"
+          },
+          "safety_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Uploaded symptom image if any"
+    },
+    "is_emergency": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "analyzed",
+        "consulted",
+        "resolved"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "symptom_description"
+  ]
+}
