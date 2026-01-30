@@ -1,0 +1,49 @@
+body {
+  font-family: Arial;
+  background: #f0f7ff;
+  text-align: center;
+  margin: 0;
+}
+
+section {
+  padding: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+.danger {
+  background: red;
+}
+
+input, select, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}

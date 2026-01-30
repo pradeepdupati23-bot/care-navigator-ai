@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Health Navigator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Landing -->
+<section id="landing">
+  <h1>AI Health Navigator</h1>
+  <p>Right Care. Right Time. Right Decision.</p>
+  <button onclick="startApp()">Get Started</button>
+</section>
+
+<!-- Onboarding -->
+<section id="onboard" class="hidden">
+
+  <h2>User Registration</h2>
+
+  <input id="name" placeholder="Name">
+  <input id="age" type="number" placeholder="Age">
+
+  <select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+
+  <input id="email" placeholder="Gmail">
+
+  <h3>Select Language</h3>
+  <select id="lang">
+    <option value="en">English</option>
+    <option value="te">Telugu</option>
+    <option value="hi">Hindi</option>
+  </select>
+
+  <button onclick="saveUser()">Continue</button>
+
+</section>
+
+<!-- Dashboard -->
+<section id="dashboard" class="hidden">
+
+  <h2>Welcome <span id="username"></span></h2>
+
+  <div class="card">
+    <h3>AI Health Assistant</h3>
+    <p id="assistant"></p>
+  </div>
+
+  <div class="buttons">
+
+    <button onclick="openCare()">General Care</button>
+    <button class="danger" onclick="openEmergency()">Emergency</button>
+    <button onclick="openBlood()">Blood Bank</button>
+
+  </div>
+
+</section>
+
+<!-- General Care -->
+<section id="care" class="hidden">
+
+  <h2>General Care</h2>
+
+  <textarea id="symptoms" placeholder="Describe your symptoms..."></textarea>
+
+  <button onclick="analyze()">Analyze</button>
+
+  <div id="result"></div>
+
+  <button onclick="goBack()">Back</button>
+
+</section>
+
+<!-- Emergency -->
+<section id="emergency" class="hidden">
+
+  <h2>Emergency Mode</h2>
+
+  <p>🚑 Ambulance: 108</p>
+  <p>📞 Emergency: 112</p>
+  <p>🏥 Doctor: 104</p>
+
+  <button onclick="goBack()">Back</button>
+
+</section>
+
+<!-- Blood Bank -->
+<section id="blood" class="hidden">
+
+  <h2>Blood Bank</h2>
+
+  <p>Do you want to donate blood?</p>
+
+  <button onclick="registerDonor()">Yes</button>
+  <button onclick="goBack()">No</button>
+
+  <div id="donorForm" class="hidden">
+
+    <input id="bg" placeholder="Blood Group (O+, A+)">
+    <button onclick="saveDonor()">Register</button>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
