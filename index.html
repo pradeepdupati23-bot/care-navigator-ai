@@ -79,5 +79,48 @@
     </div>
 
     <script src="script.js"></script>
+    {
+  "name": "HealthReminder",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email"
+    },
+    "reminder_type": {
+      "type": "string",
+      "enum": [
+        "medication",
+        "nutrition",
+        "preventive",
+        "checkup"
+      ],
+      "description": "Type of reminder"
+    },
+    "title": {
+      "type": "string",
+      "description": "Reminder title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "frequency": {
+      "type": "string",
+      "description": "How often (daily, weekly, etc.)"
+    },
+    "is active": {
+      "type": "Boolean",
+      "default": true,
+      "description": "Whether reminder is active"
+    }
+  },
+  "required": [
+    "user email",
+    "reminder type",
+    "title",
+    "description"
+  ]
+}
 </body>
 </html>
