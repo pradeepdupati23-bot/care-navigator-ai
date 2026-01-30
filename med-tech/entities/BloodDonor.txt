@@ -1,0 +1,58 @@
+{
+  "name": "BloodDonor",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Donor's email"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "blood_group": {
+      "type": "string",
+      "enum": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ],
+      "description": "Blood group"
+    },
+    "phone_number": {
+      "type": "string",
+      "description": "Contact number"
+    },
+    "location": {
+      "type": "string",
+      "description": "City/Area"
+    },
+    "willing_to_donate": {
+      "type": "boolean",
+      "default": true,
+      "description": "Current willingness status"
+    },
+    "last_donation_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last donation date"
+    },
+    "available_for_donation": {
+      "type": "boolean",
+      "default": true,
+      "description": "Currently available"
+    }
+  },
+  "required": [
+    "user_email",
+    "full_name",
+    "blood_group",
+    "phone_number",
+    "location"
+  ]
+}

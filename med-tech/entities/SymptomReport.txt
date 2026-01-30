@@ -1,0 +1,74 @@
+{
+  "name": "SymptomReport",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email"
+    },
+    "symptom_description": {
+      "type": "string",
+      "description": "Description of symptoms"
+    },
+    "input_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "voice",
+        "image"
+      ],
+      "description": "How the symptom was reported"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Image URL if uploaded"
+    },
+    "analyzed_domain": {
+      "type": "string",
+      "description": "Medical domain identified"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "Basic Care",
+        "Intermediate Care",
+        "Advanced Care"
+      ],
+      "description": "Risk classification"
+    },
+    "recommendations": {
+      "type": "string",
+      "description": "AI-generated recommendations"
+    },
+    "suggested_medicines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "how_it_helps": {
+            "type": "string"
+          },
+          "safety_note": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Suggested medications"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the report was created"
+    }
+  },
+  "required": [
+    "user_email",
+    "symptom_description"
+  ]
+}

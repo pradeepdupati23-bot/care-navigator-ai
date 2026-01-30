@@ -1,0 +1,75 @@
+{
+  "name": "HealthProfile",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "User's email address"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "age": {
+      "type": "integer",
+      "description": "Age in years"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "description": "Gender"
+    },
+    "health_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Current or past health conditions"
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ongoing medications"
+    },
+    "lifestyle_indicators": {
+      "type": "object",
+      "properties": {
+        "exercise_frequency": {
+          "type": "string"
+        },
+        "diet_type": {
+          "type": "string"
+        },
+        "smoking": {
+          "type": "boolean"
+        },
+        "alcohol": {
+          "type": "boolean"
+        }
+      },
+      "description": "Lifestyle information"
+    },
+    "preferred_language": {
+      "type": "string",
+      "default": "English",
+      "description": "Preferred language for the app"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether onboarding is complete"
+    }
+  },
+  "required": [
+    "user_email",
+    "full_name",
+    "age",
+    "gender"
+  ]
+}
